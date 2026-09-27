@@ -19,4 +19,5 @@ flowchart TB
     P ==> |Nguồn 3.3V| M
     P ==> |Nguồn V_LED| L
     P -.-> |Đo % pin| M
+
 ```
