@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "author": "duy nguyễn",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": -81.56, "attrs": {} },
+    {
+      "type": "wokwi-led-strip",
+      "id": "strip1",
+      "top": 21.3,
+      "left": 86.4,
+      "attrs": { "pixels": "8" }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot1",
+      "top": 81.8,
+      "left": 104.6,
+      "attrs": { "travelLength": "30" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.2", "strip1:VSS", "black", [ "v0", "h19.2", "v19.2" ] ],
+    [ "esp:3V3", "strip1:VDD", "green", [ "h0.15", "v-28.8", "h124.8" ] ],
+    [ "esp:21", "strip1:DIN", "green", [ "h38.4", "v-38.4" ] ],
+    [ "pot1:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "pot1:VCC", "strip1:VDD", "red", [ "h0" ] ],
+    [ "pot1:SIG", "esp:32", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
