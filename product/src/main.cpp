@@ -474,7 +474,7 @@ void TaskSensorCode(void* pvParameters) {
                     }
                 }
                 if (is_blowing && fabsf(dp_diff_step) < 0.8f) {
-                    if (now - t_steady_blow > 7000) {
+                    if (now - t_steady_blow > 5000) {
                         is_blowing = false; // Tự thoát trạng thái thổi
                         g_tare = raw_filtered;
                     }
@@ -544,7 +544,7 @@ void TaskSensorCode(void* pvParameters) {
                     }
                 }
             }
-
+            char bar[11] = "[--------]";
             for (int i = 0; i < 8; i++) {
                 bar[i + 1] = (i < n_leds) ? '#' : '-';
             }
